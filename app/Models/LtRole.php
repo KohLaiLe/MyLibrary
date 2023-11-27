@@ -10,4 +10,8 @@ class LtRole extends Model
     use HasFactory;
 
     protected $table = 'LtRole';
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
 }

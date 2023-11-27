@@ -10,4 +10,8 @@ class LtBookCategory extends Model
     use HasFactory;
 
     protected $table = 'LtBookCategory';
+
+    public function book(){
+        return $this->hasMany(MsBook::class);
+    }
 }

@@ -44,4 +44,14 @@ class User extends Authenticatable
     ];
 
     protected $table = 'MsUser';
+
+    public function role(){
+        return $this->belongsTo(LtRole::class, 'IdRole', 'IdRole');
+    }
+    public function member(){
+        return $this->hasOne(MsMember::class);
+    }
+    public function staff(){
+        return $this->hasOne(MsStaff::class);
+    }
 }

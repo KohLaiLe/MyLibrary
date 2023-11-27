@@ -10,4 +10,8 @@ class MsStaff extends Model
     use HasFactory;
 
     protected $table = 'MsStaff';
+
+    public function user(){
+        return $this->belongsTo(User::class, 'IdUser', 'IdUser');
+    }
 }

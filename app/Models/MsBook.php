@@ -10,4 +10,11 @@ class MsBook extends Model
     use HasFactory;
 
     protected $table = 'MsBook';
+
+    public function bookCategory(){
+        return $this->belongsTo(LtBookCategory::class, 'IdBookCategory', 'IdBookCategory');
+    }
+    public function borrowBook(){
+        return $this->hasOne(TrBorrowBook::class);
+    }
 }
